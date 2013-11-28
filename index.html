@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-min.css">
+  <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+  <title>Your New Application</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <style type="text/css">
+    /* Prevent copy paste for all elements except text fields */
+    *  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+    input, textarea  { -webkit-user-select:text; }
+  </style>
+  <script src="intelxdk.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="cordova.js"></script>
+  <script type="text/javascript">
+    /* This code is used to run as soon as Intel activates */
+    var onDeviceReady=function(){
+      //hide splash screen
+      intel.xdk.device.hideSplashScreen();
+    };
+    document.addEventListener("intel.xdk.device.ready",onDeviceReady,false);
+  </script>
+  <script type="application/javascript" src="js/jquery.min.js"></script>
+  <script type="application/javascript" src="jqm/jquery.mobile-min.js"></script>
+</head>
+
+<body>
+
+
+
+  <!-- content goes here-->
+  <div class="uwrap">
+    <div class="upage" data-role="page">
+      <div class="upage-outer">
+        <div data-role="header" class="container-group inner-element uib_w_1" data-uib="jquery_mobile/header">
+          <h1>Device Notification</h1>
+          <div class="widget-container wrapping-col single-centered"></div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <div class="upage-content">
+
+          <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row">
+            <div class="col uib_col_1 col-0_12-12" data-uib="layout/col">
+              <div class="widget-container content-area vertical-col">
+
+                <a class="widget uib_w_2 d-margins" onclick="showAlert(); return false" data-uib="jquery_mobile/button" data-role="button" id="alert" data-icon="navigation">Alert</a>
+                <a class="widget uib_w_3 d-margins" onclick="playBeep(); return false;" data-uib="jquery_mobile/button" data-role="button"
+                data-icon="navigation" id="Promt">Play Beep</a><span class="uib_shim"></span>
+                <a class="widget uib_w_3 d-margins" onclick="vibrate(); return false;" data-uib="jquery_mobile/button" data-role="button"
+                data-icon="navigation" id="Promt">Vibrate</a><span class="uib_shim"></span>
+                <a class="widget uib_w_3 d-margins" onclick="showConfirm(); return false;" data-uib="jquery_mobile/button" data-role="button"
+                data-icon="navigation" id="Promt">show Confirm</a><span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+        </div>
+        <!-- /upage-content -->
+
+      </div>
+      <!-- /upage-outer -->
+
+    </div>
+    <!-- /upage -->
+
+  </div>
+  <!-- /uwrap -->
+</body>
+
+</html>
